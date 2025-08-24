@@ -3,7 +3,10 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/prisma"
+
+  // The ../generated/prisma path is relative to the schema.prisma file's location. 
+  // (i.e.) this is generated/prisma from the project root.
+  output = "../generated/prisma"
 }
 
 datasource db {
