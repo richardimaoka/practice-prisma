@@ -2,7 +2,7 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
+  provider = "prisma-client"
 
   // The ../generated/prisma path is relative to the schema.prisma file's location. 
   // (i.e.) this is generated/prisma from the project root.
