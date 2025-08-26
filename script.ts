@@ -1,3 +1,4 @@
+import "dotenv/config";
 // .js file extension in the import statement, following:
 //   https://www.prisma.io/docs/orm/prisma-schema/overview/generators?#importing-prisma-client
 // since file extension is mandatory in Node.js runtime:
@@ -7,8 +8,13 @@ import { PrismaClient } from "./generated/prisma/client.js";
 const prisma = new PrismaClient();
 
 async function main() {
-  // ... you will write your Prisma Client queries here
-  console.log("main executed");
+  const user = await prisma.user.create({
+    data: {
+      name: "David",
+      email: "david@prisma.io",
+    },
+  });
+  console.log(user);
 }
 
 main()
