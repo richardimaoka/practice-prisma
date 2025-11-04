@@ -18,7 +18,7 @@ async function main() {
         id: user.id,
       },
     });
-    console.log(`Deleted user: ${user}`);
+    console.log(`Deleted user:`, user);
   }
 }
 
