@@ -1,6 +1,2 @@
 node_modules
 
-generated/prisma
-.env
-
-prisma/dev.db
