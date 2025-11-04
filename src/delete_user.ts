@@ -11,13 +11,15 @@ const adapter = new PrismaBetterSQLite3({ url: dbPath });
 const prisma = new PrismaClient({ adapter });
 
 async function main() {
-  const user = await prisma.user.create({
-    data: {
-      name: "Alice",
-    },
-  });
-
-  console.log("created user:", user);
+  const users = await prisma.user.findMany();
+  for (const user of users) {
+    await prisma.user.delete({
+      where: {
+        id: user.id,
+      },
+    });
+    console.log(`Deleted user: ${user}`);
+  }
 }
 
 main()
